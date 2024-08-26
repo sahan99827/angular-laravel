@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content>
+    <div class="row">{{ data.message }}</div>
+    <div class="row">
+        <div class="col-6">Your FirstName :</div>
+        <div class="col-6">{{data.systemData.firstname}}</div>
+    </div><div class="row">
+    <div class="col-6">Your LastName :</div>
+    <div class="col-6">{{data.systemData.lastname}}</div>
+</div><div class="row">
+    <div class="col-6">Your Email :</div>
+    <div class="col-6">{{data.systemData.email}}</div>
+</div><div class="row">
+    <div class="col-6">Your NIC :</div>
+    <div class="col-6">{{data.systemData.nic}}</div>
+</div><div class="row">
+    <div class="col-6">Your Number :</div>
+    <div class="col-6">{{data.systemData.number}}</div>
+</div><div class="row">
+    <div class="col-6">Your Age :</div>
+    <div class="col-6">{{data.systemData.age}}</div></div>
+    <div class="row">
+        <div class="col-6">Your Address :</div>
+        <div class="col-6">{{data.systemData.address}}</div></div>
+<!--  <div class="row">-->
+<!--    <div class="col-6">Your Image :</div>-->
+<!--    <div class="col-6">{{data.systemData.image}}</div></div>-->
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No</button>
+    <button mat-button color="primary" (click)="onYesClick()">Yes</button>
+</mat-dialog-actions>

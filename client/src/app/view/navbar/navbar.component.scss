@@ -1,0 +1,70 @@
+.example-spacer {
+  flex: 1 1 auto;
+
+}
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+.failory-logo-image {
+  padding-top: -2px;
+  border-width: 0;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  max-width: 100px;
+  vertical-align: middle;
+  height: 100%;
+}
+img
+{
+  width: 30px;
+}
+.pointer {cursor: pointer;}
+/* unvisited link */
+.nav-item a:link {
+  color: #1e00ff;
+
+}
+
+/* visited link */
+.nav-item a:visited {
+  color: #f10e0e;
+
+}
+
+/* mouse over link */
+.nav-item a:hover {
+  color: #151fce;
+  background-color: #cdffc7;
+  border-radius: 5px;
+}
+
+/* selected link */
+.nav-item a:active {
+  color: #4804ff;
+}
+.custom-toggler{
+  position: absolute;
+  align-self: center;
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+.padding{
+  padding-left: 50px;
+}

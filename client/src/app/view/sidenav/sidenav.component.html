@@ -1,0 +1,25 @@
+<mat-sidenav-container class="justify-content-center">
+  <mat-sidenav  mode="over"  [opened]="navService.getSideNavState()">
+    <div class="row w-100 justify-content-end">
+      <button (click)="navService.setSideNavState()" color="warn" mat-mini-fab>
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+  <div class="px-md-3 ">
+    <mat-nav-list>
+      <div>
+        <mat-expansion-panel class="custom-panel px-0 pb-0">
+          <mat-list-item>
+            Phone
+          </mat-list-item>
+          <mat-list-item>Vehicle
+          </mat-list-item>
+          <mat-list-item>Laptop
+          </mat-list-item>
+        </mat-expansion-panel>
+      </div>
+      </mat-nav-list>
+  </div>
+ </mat-sidenav>
+</mat-sidenav-container>

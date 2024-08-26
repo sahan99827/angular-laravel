@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"> </div>
+    <div class="col-md-4" style="padding-top: 150px">
+      <mat-card class="example-card">
+        <mat-card-header  style="background-color: mediumaquamarine">
+          <div mat-card-avatar></div>
+          <mat-card-title style="margin-left: 0px">Send Email Reset Password </mat-card-title>
+        </mat-card-header>
+        <mat-card-content style="background-color: snow">
+          <form #RequestResetForm=ngForm (ngSubmit)="onSubmit()" >
+            <br>
+            <div class="example-container">
+              <mat-form-field appearance="outline">
+                <mat-label>Enter your email</mat-label>
+                <input type="email" matInput  name="email"  [(ngModel)]="form.email"  required>
+                <mat-hint>madawa@gmail.com</mat-hint>
+              </mat-form-field>
+            </div>
+            <br>
+
+            <mat-card-actions style="background-color: snow"  >
+              <button type="submit" mat-button mat-raised-button color="primary" [disabled]="!RequestResetForm.valid">Send Password Reset Email</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            </mat-card-actions>
+          </form>
+        </mat-card-content>
+
+      </mat-card>
+    </div>
+    <div class="col-md-4"> </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+}
+.padding{
+padding-top: 30px;
+
+}
+.example-card {
+  max-width: 600px;
+  max-height: 2200px;
+ }
+.example-card2 {
+  max-width: 400px;
+  max-height: 2200px;
+}
+form{
+  padding-top: 10px;
+}
+.mat-mdc-form-field{
+  max-width: 600px;
+}
+@media (max-width: 1200px) {
+  .example-card {
+    width: 500px;
+   }
+}
+@media (max-width: 992px) {
+  .example-card {
+    width: 350px;
+    //padding-top:80PX ;
+  }
+}
+@media (max-width: 767px) {
+  .example-card {
+    width: 500px;
+    height: 300px;
+  }
+}
+@media (max-width: 653px) {
+  .example-card {
+    width: 400px;
+  }
+}
+@media (max-width: 575px){
+  .example-card {
+    width: 300px;
+  }
+}
+#imgpanel{
+  height:100px;
+  margin-bottom: 30px;
+}
+
+#imgpanel img{
+  height: 100px;
+  width: 100px;
+}
+
+
+
