@@ -37,7 +37,7 @@
           <img [src]="imageUrl">
           <input id="userImage" hidden="hidden" (change)="selectImage($event)" Select type="file" formControlName="image"  >
           <label for="userImage" id="selectbutton">Select</label>
-          <!--      <label id="clearbutton" (click)="clearImage()">Clear</label>-->
+<!--                <label id="clearbutton" (click)="clearImage()">Clear</label>-->
         </div>
         <mat-card-actions style="background-color: snow"  type="button" >
           <button type="submit" mat-button mat-raised-button color="primary" [disabled]="!itemForm.valid">Submit</button>&nbsp;&nbsp;&nbsp;

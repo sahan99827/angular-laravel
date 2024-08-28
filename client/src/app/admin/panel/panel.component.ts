@@ -154,12 +154,12 @@ export class PanelComponent  implements OnInit{
   }
 
   handleResponse(data: any) {
-    console.log("data", data[0])
+    // console.log("data", data[0])
     this.id = data[0].id;
     this.itemNameField.setValue(data[0].itemname);
     this.itemPriceField.setValue(data[0].itemprice);
     this.itemCodeField.setValue(data[0].itemcode);
-    // this.imageUrl =this.itm.image
+    this.imageUrl =data[0].image_url
     console.log('image:',this.itm)
 
 

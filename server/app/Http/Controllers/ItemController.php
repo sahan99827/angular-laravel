@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use mysql_xdevapi\Exception;
 
@@ -41,7 +42,7 @@ class ItemController extends Controller
         $save->itemname = $data['itemname'];
         $save->itemprice = $data['itemprice'];
         $save->itemcode = $data['itemcode'];
-        $save->image = $request->file('image')->store('item/images');
+        $save->image = $request->file('image')->store('public/item/images');
 
 //        $this->searchByEmail($request);
 //        info($save);
@@ -99,28 +100,29 @@ class ItemController extends Controller
 
     public function getAll()
     {
-        $item = new Item();
-        $data = $item->getConnection('mysql_second')
-            ->table('items')
-            ->select('*')
-            ->get();
-        if (empty($data)) {
-            return collect();
+        try {
+            $items = Item::on('mysql_second')
+                        ->get();
+
+            return response()->json($items);
+        } catch (\Exception $e) {
+            // Log the error and return an appropriate response
+            Log::error($e->getMessage());
+            return response()->json(['message' => 'An error occurred while retrieving items.'], 500);
         }
-        return $data;
+
     }
 
     public function getById(Request $request)
     {
-        info($request->all()['id']);
+//        info($request->all()['id']);
         $item = new Item();
         $id = $request->all()['id'];
         if (!$item->getConnection('mysql_second')->table('items')->exists()) {
             throw new Exception('The mysql_second database connection does not exist.');
         }
 
-        return $item->getConnection('mysql_second')
-            ->table('items')
+        return Item::on('mysql_second')
             ->where('id', $id)
             ->limit(12)
             ->get();

@@ -255,7 +255,7 @@ export class ProfileComponent implements OnInit {
     this.numberField.setValue(data[0].number);
     this.ageField.setValue(data[0].age);
     this.addressField.setValue(data[0].address);
-    // this.imageField.setValue(data[0].image);
+    this.imageUrl =data[0].image_url
 
 
 

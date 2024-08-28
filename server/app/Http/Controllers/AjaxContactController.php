@@ -58,7 +58,7 @@ class AjaxContactController extends Controller
         $save->nic = $data['nic'];
         $save->age = $data['age'];
         $save->email = $data['email'];
-        $save->image = $request->file('image')->store('images');
+        $save->image = $request->file('image')->store('public/images');
 
 //        $this->searchByEmail($request);
 //        info($save);
@@ -107,7 +107,7 @@ class AjaxContactController extends Controller
         $update->nic = $data['nic'];
         $update->age = $data['age'];
         $update->email = $data['email'];
-        $update->image = $request->file('image')->store('images');
+        $update->image = $request->file('image')->store('public/images');
 //        info($update);
 //        $this->searchByEmail($request);
         $update->save();
@@ -135,20 +135,11 @@ class AjaxContactController extends Controller
             throw new Exception('The mysql_second database connection does not exist.');
         }
 
-        $data = $search->getConnection('mysql_second')
-            ->table('systems')
+        return  System::on('mysql_second')
             ->where('nic', 'like', '%' . $nic . '%')
             ->limit(12)
             ->get();
-//        info($data);
-        if (empty($data)) {
-            return collect();
-        }else{
-            info('Nic Invalid');
 
-        }
-
-        return $data;
     }
 //    public function searchByEmail(Request $request): \Illuminate\Support\Collection
 //    {
